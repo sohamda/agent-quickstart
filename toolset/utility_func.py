@@ -21,12 +21,13 @@ def fetch_current_datetime(format: Optional[str] = None) -> str:
     current_time = datetime.datetime.now()
 
     # Use the provided format if available, else use a default format
-    if format:
-        time_format = format
-    else:
-        time_format = "%Y-%m-%d %H:%M:%S"
+    #if format:
+    #    time_format = format
+    #else:
+    time_format = '%Y-%m-%d %H:%M:%S'
 
     time_json = json.dumps({"current_time": current_time.strftime(time_format)})
+    print(f"Returning time: {time_json}")
     return time_json
 
 
@@ -43,6 +44,7 @@ def fetch_weather(location: str) -> str:
     mock_weather_data = {"New York": "Sunny, 25°C", "London": "Cloudy, 18°C", "Tokyo": "Rainy, 22°C"}
     weather = mock_weather_data.get(location, "Weather data not available for this location.")
     weather_json = json.dumps({"weather": weather})
+    print(f"Returning weather: {weather_json}")
     return weather_json
 
 
@@ -63,6 +65,7 @@ def send_email(recipient: str, subject: str, body: str) -> str:
     print(f"Body:\n{body}")
 
     message_json = json.dumps({"message": f"Email successfully sent to {recipient}."})
+    print(f"Returning email: {message_json}")
     return message_json
 
 
@@ -91,6 +94,7 @@ def convert_temperature(celsius: float) -> str:
     :rtype: str
     """
     fahrenheit = (celsius * 9 / 5) + 32
+    print(f"Returning fahrenheit: {fahrenheit}")
     return json.dumps({"fahrenheit": fahrenheit})
 
 
@@ -109,6 +113,7 @@ def get_user_info(user_id: int) -> str:
         3: {"name": "Charlie", "email": "charlie@example.com"},
     }
     user_info = mock_users.get(user_id, {"error": "User not found."})
+    print(f"Returning user: {user_info}")
     return json.dumps({"user_info": user_info})
 
 # Example User Input for Each Function

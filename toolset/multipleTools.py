@@ -39,7 +39,7 @@ with project_client:
     message = project_client.agents.create_message(
         thread_id=thread.id,
         role="user",
-        content="Hello, send Charlie email with the datetime and weather information in New York, make sure to use Fahrenheit for temperature information?",
+        content="Hello, send Charlie an email with the datetime and weather information in New York, make sure to use Fahrenheit for temperature information?",
     )
     print(f"Created message, ID: {message.id}")
 
