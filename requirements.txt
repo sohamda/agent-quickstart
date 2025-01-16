@@ -1,0 +1,7 @@
+azure-ai-projects
+azure-identity
+azure-monitor-opentelemetry
+python-dotenv
+opentelemetry-sdk 
+azure-monitor-opentelemetry
+opentelemetry-instrumentation-logging
